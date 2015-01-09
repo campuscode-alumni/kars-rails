@@ -40,8 +40,10 @@
             <h3><%= car.model %></h3>
             <p><%=car.value %></p>
             <p>Marca: <%=car.brand%> Ano:<%=car.year%> Km Rodados: <%=car.km%> Motor: <%=car.motor%></p>
-            
+            <%= link_to "Comprar", "car/cars" , class: "btn btn-primary"%>
+            <!--
             <p><a href="detalhes.html" class="btn btn-primary" role="button">Comprar</a></p>
+            -->
           </div>
         </div>
       </div>
