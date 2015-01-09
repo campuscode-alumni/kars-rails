@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'car/details'
+  get 'car/:id/details' => 'car#details'
   get 'home/index'
+  get 'car/cars'
+  post 'car/cars' => 'car#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
