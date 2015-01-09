@@ -7,16 +7,16 @@
     <section>
       <div class="row">
         <div class="col-md-6 col-sm-12">
-	          <%= image_tag "carro01.jpg", :class => "img-responsive" %>
+	          <%= image_tag "carro01.jpg", class: "img-responsive" %>
         </div>
         <div class="col-md-6 col-sm-12">
           <div class="row">
             <h1><%= @car.model + " - " + @car.brand %>  </h1>
             <h2>Preço: <span id="preco_carro"><%= @car.value %></span> <small>(com financiamento)</small></h2>            
             <ul class="list-unstyled">
-              <li><%= @car.year %></option> 
-              <li><%= @car.km %></option> 
-              <li><%= @car.motor %></option> 
+              <li>Ano: <%= @car.year %></option> 
+              <li>KM: <%= @car.km %></option> 
+              <li>Motor: <%= @car.motor %></option> 
             </ul>
             <button class="btn btn-danger hidden-print">Comprar</button>
             <button class="btn btn-success hidden-print" onclick="financiamento()">Detalhes Financiamento</button>
