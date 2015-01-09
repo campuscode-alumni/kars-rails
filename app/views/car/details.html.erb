@@ -7,7 +7,7 @@
     <section>
       <div class="row">
         <div class="col-md-6 col-sm-12">
-          <img src="images/carro01.jpg" class="img-thumbnail img-responsive" height="200px">
+	          <%= image_tag "carro01.jpg", :class => "img-responsive" %>
         </div>
         <div class="col-md-6 col-sm-12">
           <div class="row">
@@ -126,3 +126,9 @@
         </div>
       </div>
     </section>
+    <script>
+    $('#tabs_kars a').click(function (e) {
+      e.preventDefault()
+      $(this).tab('show')
+    })
+  </script>
