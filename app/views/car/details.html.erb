@@ -11,13 +11,12 @@
         </div>
         <div class="col-md-6 col-sm-12">
           <div class="row">
-            <h1>Nome e Modelo do Carro</h1>
-            <h2>Preço: <span id="preco_carro">10.000,50</span> <small>(com financiamento)</small></h2>            
+            <h1><%= @car.model + " - " + @car.brand %>  </h1>
+            <h2>Preço: <span id="preco_carro"><%= @car.value %></span> <small>(com financiamento)</small></h2>            
             <ul class="list-unstyled">
-              <li>Banco de couro</option> 
-              <li>Ar condicionado</option> 
-              <li>Vidro e trava eletrica</option> 
-              <li>Rodas de liga leve</option> 
+              <li><%= @car.year %></option> 
+              <li><%= @car.km %></option> 
+              <li><%= @car.motor %></option> 
             </ul>
             <button class="btn btn-danger hidden-print">Comprar</button>
             <button class="btn btn-success hidden-print" onclick="financiamento()">Detalhes Financiamento</button>
