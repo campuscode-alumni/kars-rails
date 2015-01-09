@@ -7,6 +7,8 @@ class CarController < ApplicationController
   end
 
   def create 
-  	puts 'Entrei no create'
+  	@car=Car.new(params.permit(:model, :year, :brand, :km, :value, :motor))
+  	@car.save 
+  	redirect_to action: "details", id: @car.id
   end
 end
