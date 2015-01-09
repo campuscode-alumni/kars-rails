@@ -10,3 +10,13 @@ Car.create({model: "Gol", brand: "VW", year: 2014, km: 15000, motor: "1.8", valu
 
 
 
+6.times do 
+	c = Car.new
+	c.model = "Gol"
+	c.brand = "Volks"
+	c.year = 96
+	c.km = 42
+	c.motor = "banana"
+	c.value = 10000.00
+	c.save
+end
