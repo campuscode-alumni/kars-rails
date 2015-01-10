@@ -12,10 +12,10 @@
         <div class="col-md-6 col-sm-12">
           <div class="row">
             <h1><%= @car.model + " - " + @car.brand %>  </h1>
-            <h2>Preço: <span id="preco_carro"><%= @car.value %></span> <small>(com financiamento)</small></h2>            
+            <h2>Preço: <span id="preco_carro"><%= number_to_currency(@car.value, unit: "R$", separator: ",", delimiter: ".", format: "%u %n") %></span> <small>(com financiamento)</small></h2>            
             <ul class="list-unstyled">
               <li>Ano: <%= @car.year %></option> 
-              <li>KM: <%= @car.km %></option> 
+              <li>KM: <%= number_with_delimiter(@car.km, delimiter: ".", separator: "") %></option> 
               <li>Motor: <%= @car.motor %></option> 
             </ul>
             <button class="btn btn-danger hidden-print">Comprar</button>
