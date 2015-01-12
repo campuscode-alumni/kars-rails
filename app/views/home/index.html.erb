@@ -31,33 +31,29 @@
       </div>
     </section>
     <br>
-    <section id="anuncios" class="row">
-
+    <section id="anuncios" >
     <% @cars.each_index do |index|%>
-      <%if index < 3%>
+      <% if index == 0 || (index % 3) == 0 %>
+        <div class="row">
+      <% end %>
          <div class="col-md-4">
             <div class="thumbnail">
               <%= image_tag "carro03.jpg"%>
               <div class="caption">
                 <h3><%= @cars[index].model %></h3>
                 <p><%= @cars[index].value %></p>
-                <p>Marca: <%=@cars[index].brand%> Ano:<%=@cars[index].year%> Km Rodados: <%=@cars[index].km%> Motor: <%=@cars[index].motor%></p>
+                <p>
+                  Marca: <%=@cars[index].brand%><br>
+                  Ano:<%=@cars[index].year%><br>
+                  Km Rodados: <%=@cars[index].km%><br>
+                  Motor: <%=@cars[index].motor%>
+                </p>
                 <%= link_to "Comprar", "car/cars" , class: "btn btn-primary"%>
               </div>
             </div>
           </div>
-      <%elsif index >= 3%>
-         <div class="col-md-4">
-            <div class="thumbnail">
-              <%= image_tag "carro03.jpg"%>
-              <div class="caption">
-                <h3><%= @cars[index].model %></h3>
-                <p><%= @cars[index].value %></p>
-                <p>Marca: <%=@cars[index].brand%> Ano:<%=@cars[index].year%> Km Rodados: <%=@cars[index].km%> Motor: <%=@cars[index].motor%></p>
-                <%= link_to "Comprar", "car/cars" , class: "btn btn-primary"%>
-              </div>
-            </div>
-          </div>
+      <% if (index%3) == 2 || index == @cars.length - 1 %>
+        </div>
       <% end %>
     <% end %>
     </section>
