@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
+  
   get 'car/:id/details' => 'car#details'
-  get 'home/index'
   get 'car/cars'
   post 'car/cars' => 'car#create'
 
