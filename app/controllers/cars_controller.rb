@@ -1,11 +1,12 @@
 class CarsController < ApplicationController
   
   def show
-    @car = Car.find(params[:id])
+    @car = Car.find_by_id(params[:id])
+    redirect_to root_path unless @car
   end
 
   def new
-    @car = Car.new	
+    @car = Car.new
   end
 
   def create 

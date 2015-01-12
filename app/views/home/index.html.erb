@@ -48,7 +48,7 @@
                   Km Rodados: <%=@cars[index].km%><br>
                   Motor: <%=@cars[index].motor%>
                 </p>
-                <%= link_to "Comprar", "car/cars" , class: "btn btn-primary"%>
+                <%= link_to "Comprar", @cars[index] , class: "btn btn-primary"%>
               </div>
             </div>
           </div>
