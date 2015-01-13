@@ -1,134 +1,134 @@
-<h1>Detalhes do carro</h1>
+<h1><%= "Detalhes de #{@car.model} #{@car.brand}"%></h1>
 <ol class="breadcrumb">
-      <li>Home</option>
-      <li>Detalhes</option>
-      <li class="active">Carro</option>
-    </ol>
-    <section>
+  <li><%= link_to "Home", root_path %></option>
+  <li>Detalhes</option>
+  <li class="active"><%= "#{@car.model} - #{@car.brand}" %></option>
+</ol>
+<section>
+  <div class="row">
+    <div class="col-md-6 col-sm-12">
+        <%= image_tag "carro01.jpg", class: "img-responsive" %>
+    </div>
+    <div class="col-md-6 col-sm-12">
       <div class="row">
-        <div class="col-md-6 col-sm-12">
-	          <%= image_tag "carro01.jpg", class: "img-responsive" %>
-        </div>
-        <div class="col-md-6 col-sm-12">
-          <div class="row">
-            <h1><%= @car.model + " - " + @car.brand %>  </h1>
-            <h2>Preço: <span id="preco_carro"><%= number_to_currency(@car.value, unit: "R$", separator: ",", delimiter: ".", format: "%u %n") %></span> <small>(com financiamento)</small></h2>            
-            <ul class="list-unstyled">
-              <li>Ano: <%= @car.year %></option> 
-              <li>KM: <%= number_with_delimiter(@car.km, delimiter: ".", separator: "") %></option> 
-              <li>Motor: <%= @car.motor %></option> 
-            </ul>
-            <button class="btn btn-danger hidden-print">Comprar</button>
-            <button class="btn btn-success hidden-print" onclick="financiamento()">Detalhes Financiamento</button>
-                 
-          <div class="row">
-            <div class="col-md-12 invisible" id="financiamento">
-              <h3>Detalhes do Financiamento</h3>
-              <div class="container-fluid" id="detalhes_do_financiamento"></div>
-            </div>
-          </div>
-          <div class="row">
-	          <div class="col-md-12" id="entrada">
-	          	<form class="form-inline" onsubmit="return false;">
-	          	<input type="text" id="valor_entrada" class="form-control"></input>
-	  				<select id="quantidade_parcelas" class="form-control">
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">Número de parcelas</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">01</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">02</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">03</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">04</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">05</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">06</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">07</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">08</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">09</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">10</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">11</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">12</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">13</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">14</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">15</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">16</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">17</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">18</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">19</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">20</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">21</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">22</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">23</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">24</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">25</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">26</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">27</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">28</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">29</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">30</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">31</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">32</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">33</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">34</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">35</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">36</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">37</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">38</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">39</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">40</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">41</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">42</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">43</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">44</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">45</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">46</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">47</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">48</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">49</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">50</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">51</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">52</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">53</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">54</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">55</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">56</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">57</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">58</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">59</a></option>
-						<option role="presentation"><a role="menuitem" tabindex="-1" href="#">60</a></option>
-
-				   </select>
-          <button class="btn  btn-default" onclick="financiamento(12)">Calcular com entrada</button>
-         </form>
-          </div>
-          </div>
-
+        <h1><%= @car.model + " - " + @car.brand %>  </h1>
+        <h2>Preço: <span id="preco_carro"><%= number_to_currency(@car.value, unit: "R$", separator: ",", delimiter: ".", format: "%u %n") %></span> <small>(com financiamento)</small></h2>            
+        <ul class="list-unstyled">
+          <li>Ano: <%= @car.year %></option> 
+          <li>KM: <%= number_with_delimiter(@car.km, delimiter: ".", separator: "") %></option> 
+          <li>Motor: <%= @car.motor %></option> 
+        </ul>
+        <button class="btn btn-danger hidden-print">Comprar</button>
+        <button class="btn btn-success hidden-print" onclick="financiamento()">Detalhes Financiamento</button>
+             
+      <div class="row">
+        <div class="col-md-12 invisible" id="financiamento">
+          <h3>Detalhes do Financiamento</h3>
+          <div class="container-fluid" id="detalhes_do_financiamento"></div>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-8">
-          <ul class="nav nav-tabs" id="tabs_kars">
-            <li class="active"><a href="#dados_anunciante">Dados Anuncianente</a></option>
-            <li><a href="#detalhes_tecnicos">Detalhes Tecnicos</a></option>
-            <li><a href="#detalhes_financiamento">Detalhes Financiamento</a></option>
-          </ul>
-          <div class="tab-content">
-            <div  id="dados_anunciante" class="tab-pane fade in active">
-              <h3>Dados do Anunciante</h3>
-              <p>dafd fadsf dfafd fadfd afafd adsf dfa dfa fdsf adf adf adf dsafd fasdf asdf dsaf dsfad daf ds</p>
-            </div> 
-            <div id="detalhes_tecnicos" class="tab-pane fade">
-              <h3>Detalhes Tecnicos</h3>
-              <p>dafd fadsf dfafd fadfd afafd adsf dfa dfa fdsf adf adf adf dsafd fasdf asdf dsaf dsfad daf ds</p>
-            </div>
-            <div id="detalhes_financiamento" class="tab-pane fade">
-              <h3>Detalhes do Financiamento</h3>
-              <p>dafd fadsf dfafd fadfd afafd adsf dfa dfa fdsf adf adf adf dsafd fasdf asdf dsaf dsfad daf ds</p>
-            </div>
-          </div>
+        <div class="col-md-12" id="entrada">
+        	<form class="form-inline" onsubmit="return false;">
+        	<input type="text" id="valor_entrada" class="form-control"></input>
+				<select id="quantidade_parcelas" class="form-control">
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">Número de parcelas</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">01</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">02</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">03</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">04</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">05</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">06</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">07</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">08</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">09</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">10</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">11</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">12</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">13</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">14</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">15</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">16</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">17</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">18</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">19</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">20</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">21</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">22</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">23</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">24</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">25</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">26</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">27</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">28</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">29</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">30</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">31</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">32</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">33</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">34</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">35</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">36</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">37</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">38</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">39</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">40</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">41</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">42</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">43</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">44</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">45</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">46</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">47</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">48</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">49</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">50</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">51</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">52</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">53</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">54</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">55</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">56</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">57</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">58</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">59</a></option>
+				<option role="presentation"><a role="menuitem" tabindex="-1" href="#">60</a></option>
+
+		   </select>
+      <button class="btn  btn-default" onclick="financiamento(12)">Calcular com entrada</button>
+     </form>
+      </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <ul class="nav nav-tabs" id="tabs_kars">
+        <li class="active"><a href="#dados_anunciante">Dados Anuncianente</a></option>
+        <li><a href="#detalhes_tecnicos">Detalhes Tecnicos</a></option>
+        <li><a href="#detalhes_financiamento">Detalhes Financiamento</a></option>
+      </ul>
+      <div class="tab-content">
+        <div  id="dados_anunciante" class="tab-pane fade in active">
+          <h3>Dados do Anunciante</h3>
+          <p>dafd fadsf dfafd fadfd afafd adsf dfa dfa fdsf adf adf adf dsafd fasdf asdf dsaf dsfad daf ds</p>
+        </div> 
+        <div id="detalhes_tecnicos" class="tab-pane fade">
+          <h3>Detalhes Tecnicos</h3>
+          <p>dafd fadsf dfafd fadfd afafd adsf dfa dfa fdsf adf adf adf dsafd fasdf asdf dsaf dsfad daf ds</p>
+        </div>
+        <div id="detalhes_financiamento" class="tab-pane fade">
+          <h3>Detalhes do Financiamento</h3>
+          <p>dafd fadsf dfafd fadfd afafd adsf dfa dfa fdsf adf adf adf dsafd fasdf asdf dsaf dsfad daf ds</p>
         </div>
       </div>
-    </section>
-    <script>
-    $('#tabs_kars a').click(function (e) {
-      e.preventDefault()
-      $(this).tab('show')
-    })
-  </script>
+    </div>
+  </div>
+</section>
+<script>
+  $('#tabs_kars a').click(function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+  })
+</script>
