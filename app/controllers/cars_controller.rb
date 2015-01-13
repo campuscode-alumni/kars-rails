@@ -9,6 +9,14 @@ class CarsController < ApplicationController
     @car = Car.new
   end
 
+  def usados
+    @cars = []
+    Car.all.each do |car|
+      @cars << car if car.usados?
+    end
+    @cars
+  end
+
   def create 
   	@car = Car.new(params.permit(:model, :year, :brand, :km, :value, :motor))
   	if @car.save 

@@ -10,7 +10,7 @@ class Car < ActiveRecord::Base
 
 	validates :value, presence: true 
 
-	def novo?
-		km == 0 && value < 100000
+	def usados?
+		km > 0
 	end
 end
