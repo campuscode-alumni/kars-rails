@@ -21,4 +21,10 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    
+
+  errors:
+    messages:
+      blank: ": Favor preencher o campo."
   

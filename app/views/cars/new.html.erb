@@ -4,8 +4,7 @@
   <% if @car.errors.any? %>
       <div id="error_explanation">
         <h2>
-          <%= pluralize(@car.errors.count, "error") %> prohibited
-          this article from being saved:
+          <%= pluralize(@car.errors.count, "error") %> *Os campos são obrigatórios!
         </h2>
         <ul>
           <% @car.errors.full_messages.each do |msg| %>
@@ -16,33 +15,33 @@
     <% end %>
 
 	<div class="form-group">
-    <label >Marca</label>
-    <input type="text" class="form-control" id="brand" name="brand">
+    <label >Marca*</label>
+    <input type="text" class="form-control" id="brand" name="brand" maxlength = 20>
    </div>
 
    <div class="form-group">
-    <label >Modelo</label>
-    <input type="text" class="form-control" id="model" name="model">
+    <label >Modelo*</label>
+    <input type="text" class="form-control" id="model" name="model" maxlength = 20>
   </div>
 
   <div class="form-group">
-    <label >Ano</label>
-    <input type="text" class="form-control" id="year" name="year">
+    <label >Ano*</label>
+    <input type="text" class="form-control" id="year" name="year" maxlength = 10>
   </div>
 
   <div class="form-group">
-    <label >Km</label>
-    <input type="text" class="form-control" id="km" name="km">
+    <label >Km*</label>
+    <input type="text" class="form-control" id="km" name="km" maxlength = 20>
   </div>
 
   <div class="form-group">
     <label >Motor</label>
-    <input type="text" class="form-control" id="motor" name="motor">
+    <input type="text" class="form-control" id="motor" name="motor" maxlength = 20>
   </div>
 
   <div class="form-group">
-    <label >Valor R$</label>
-    <input type="text" class="form-control" id="value" name="value">
+    <label >Valor R$*</label>
+    <input type="text" class="form-control" id="value.to_i" name="value" maxlength = 11>
   </div>
   <button type="submit" class="btn btn-default">Salvar</button>
 <% end %>
