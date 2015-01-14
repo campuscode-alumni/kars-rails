@@ -17,4 +17,17 @@ class CarsController < ApplicationController
   		render "new"
   	end
   end
+
+  def edit
+  end
+
+  def index
+    @cars = Car.all
+  end
+
+  def destroy
+    @car = Car.find(params[:id])
+    @car.destroy
+    redirect_to cars_path 
+  end
 end
