@@ -1,0 +1,28 @@
+<header>
+      <div class="page-header">
+        <h1>Carros Novos</h1>
+      </div>
+ </header>
+
+<section id="anuncios" class="row">
+<% @cars.each do |car| %>
+
+<div class="col-md-4">
+        <div class="thumbnail">
+          <img alt="Carro03" src="/assets/carro03.jpg">
+          <div class="caption">
+            <h3><%= car.model  %></h3>
+            <p>R$ <%= car.value %></p>
+            <p>Marca: <%= car.brand %></p>
+            <p>Ano: <%= car.year %></p>
+            <p>Km: <%= car.km %></p>
+            <p>Motor: <%= car.motor %></p>
+            <p><a href="detalhes.html" class="btn btn-primary" role="button">Comprar</a></p>
+          </div>
+        </div>
+      </div>
+<%end%>
+
+</section>
+
+

@@ -33,6 +33,11 @@ class CarsController < ApplicationController
   	end
   end
 
+  def news
+    @cars = Car.where("km = ? and value < ?",0,100000)
+  end
+  
+
   def edit
     @car = Car.find(params[:id])
   end
@@ -54,6 +59,6 @@ class CarsController < ApplicationController
   end
 
   def car_params
-    params.require(:car).permit(:model, :year, :brand, :km, :value, :motor)
+    params.require(:car).permit(:model, :year, :brand, :km, :value, :motor, :technical_details)
   end
 end
