@@ -10,20 +10,6 @@ class CarsController < ApplicationController
   end
 
 
-  def usados
-    @cars = Car.select do |car|
-      car.usados?
-    end
-    @cars
-  end
-
-  def luxo
-    @cars = Car.select do |car|
-      car.luxo?
-    end
-    @cars
-  end
-
   def create
   	@car = Car.new(car_params)
   	if @car.save 
@@ -32,11 +18,6 @@ class CarsController < ApplicationController
   		render "new"
   	end
   end
-
-  def news
-    @cars = Car.where("km = ? and value < ?",0,100000)
-  end
-  
 
   def edit
     @car = Car.find(params[:id])
