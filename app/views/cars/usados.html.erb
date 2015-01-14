@@ -1,0 +1,29 @@
+
+<ol class="breadcrumb">
+  <li><%= link_to "Home", root_path %></option>
+  <li>Carros Novos</option>
+  <li class="active"></option>
+</ol>
+<section>
+ <% @cars.each do |banana| %>
+ <% banana %>
+  <div class="row">
+	    <div class="col-md-4 col-sm-10">
+	        <%= image_tag "carro01.jpg", class: "img-responsive img-rounded" %>
+	    </div>
+	    <div class="col-md-7 col-sm-10">
+	      <div class="row">
+	        <ul class="well">
+	        	<li class=	"list-group-item"><%= "#{banana.model} - #{banana.brand}"%></li>
+	        	<li class="list-group-item">Preço: <%= banana.value %></li>
+	        	<li class="list-group-item">Ano:<%= banana.year %></li>
+	        	<li class="list-group-item">KM: <%= banana.km %></li>
+	        	<li class="list-group-item">Motor: <%= banana.motor %></li>
+	        </ul>
+	      </div>	        
+	   	</div>
+ 	</div>
+ 	<hr>
+	   	<% end  %>
+	
+</section>

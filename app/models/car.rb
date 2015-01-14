@@ -10,4 +10,7 @@ class Car < ActiveRecord::Base
 
 	validates :value, presence: true 
 
+	def usados?
+		km > 0
+	end
 end
