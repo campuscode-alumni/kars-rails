@@ -17,4 +17,9 @@ class CarsController < ApplicationController
   		render "new"
   	end
   end
+
+  def news
+    @cars = Car.where("km = ? and value < ?",0,100000)
+  end
+  
 end
