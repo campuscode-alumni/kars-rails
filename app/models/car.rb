@@ -1,14 +1,9 @@
 class Car < ActiveRecord::Base
+	scope :usados, -> { where ("km > 0") }
+	scope :novos,  -> { where ("km == 0 and value < 100000") }
+	scope :luxos,   -> { where ("km == 0 and value >= 100000") }
 	
-	validates :brand, presence:true
-	
-	validates :model, presence: true
-
-	validates :year, presence: true
-
-	validates :km, presence: true
-
-	validates :value, presence: true 
+	validates :brand, :model, :year, :km, :value, presence: true 
 
 	def usados?
 		km > 0
