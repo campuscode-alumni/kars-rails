@@ -11,9 +11,15 @@ class CarsController < ApplicationController
 
 
   def usados
-    @cars = []
-    Car.all.each do |car|
-      @cars << car if car.usados?
+    @cars = Car.select do |car|
+      car.usados?
+    end
+    @cars
+  end
+
+  def luxo
+    @cars = Car.select do |car|
+      car.luxo?
     end
     @cars
   end

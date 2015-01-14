@@ -13,4 +13,8 @@ class Car < ActiveRecord::Base
 	def usados?
 		km > 0
 	end
+
+	def luxo?
+		km == 0 && value >= 100000
+	end 
 end

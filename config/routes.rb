@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   resources :cars
-  get '/usados', to: 'cars#usados'
+  get '/car/usados', to: 'cars#usados'
+  get '/car/luxo', to: 'cars#luxo'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,13 +1,13 @@
 
 <ol class="breadcrumb">
   <li><%= link_to "Home", root_path %></option>
-  <li>Carros Usados</option>
+  <li>Carros de Luxo</option>
   <li class="active"></option>
 </ol>
 <section>
  <% @cars.each do |c| %>
  <% c %>
- <div class="row">
+  <div class="row">
 	    <div class="col-md-4 col-sm-10">
 	        <%= image_tag "carro01.jpg", class: "img-responsive img-rounded" %>
 	    </div>
