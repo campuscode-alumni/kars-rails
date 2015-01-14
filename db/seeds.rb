@@ -20,3 +20,12 @@ Car.create({model: "Gol", brand: "VW", year: 2014, km: 15000, motor: "1.8", valu
 	c.value = 10000.00
 	c.save
 end
+
+# Carros novos
+Car.create({model: "Gol", brand: "VW", year: 2014, km: 0, motor: "1.6", value: 31000})
+Car.create({model: "Sandero", brand: "Renault", year: 2014, km: 0, motor: "1.6", value: 34000})
+
+# Carros luxo
+Car.create({model: "A4", brand: "Audi", year: 2014, km: 0, motor: "2.0 Turbo", value: 130000})
+Car.create({model: "Evoque", brand: "Land Hover", year: 2014, km: 0, motor: "3.6", value: 260000})
+

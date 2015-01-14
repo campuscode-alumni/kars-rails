@@ -10,14 +10,6 @@ class CarsController < ApplicationController
   end
 
 
-  def usados
-    @cars = []
-    Car.all.each do |car|
-      @cars << car if car.usados?
-    end
-    @cars
-  end
-
   def create
   	@car = Car.new(car_params)
   	if @car.save 
@@ -26,11 +18,6 @@ class CarsController < ApplicationController
   		render "new"
   	end
   end
-
-  def news
-    @cars = Car.where("km = ? and value < ?",0,100000)
-  end
-  
 
   def edit
     @car = Car.find(params[:id])
@@ -55,5 +42,4 @@ class CarsController < ApplicationController
   def car_params
     params.require(:car).permit(:model, :year, :brand, :km, :value, :motor, :technical_details, :featured)
   end
-
 end

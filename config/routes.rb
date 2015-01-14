@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'cars/news'
 
   resources :cars
 
   get '/usados', to: 'cars#usados'
+  get '/novos', to: 'cars#news'
+  get '/luxo', to: 'cars#luxo'
 
   # The priority is based upon order of creation: first created -> highest priority.
   
