@@ -15,43 +15,40 @@
 
 	<div class="form-group">
     <label >Marca*</label>
-    <%= c.text_field :brand %>
-   <!-- <input type="text" class="form-control" id="brand" name="brand" maxlength = 20>-->
+    <%= c.text_field :brand, class:"form-control"%>
    </div>
 
    <div class="form-group">
     <label >Modelo*</label>
-    <%= c.text_field :model %>
-<!--    <input type="text" class="form-control" id="model" name="model" maxlength = 20>-->
+    <%= c.text_field :model, class:"form-control"%>
   </div>
 
   <div class="form-group">
     <label >Ano*</label>
-    <%= c.number_field :year %>
-<!--    <input type="text" class="form-control" id="year" name="year" maxlength = 10>-->
+    <%= c.number_field :year, class:"form-control"%>
   </div>
 
   <div class="form-group">
     <label >Km*</label>
-    <%= c.number_field :km %>
-<!--    <input type="text" class="form-control" id="km" name="km" maxlength = 20>-->
+    <%= c.number_field :km, class:"form-control"%>
   </div>
 
   <div class="form-group">
     <label >Motor</label>
-    <%= c.text_field :motor %>
-<!--    <input type="text" class="form-control" id="motor" name="motor" maxlength = 20>-->
+    <%= c.text_field :motor, class:"form-control"%>
   </div>
 
   <div class="form-group">
     <label >Valor R$*</label>
-    <%= c.text_field :value %>
-<!--    <input type="text" class="form-control" id="value.to_i" name="value" maxlength = 11>-->
+    <%= c.text_field :value, class:"form-control"%>
   </div>
-    <div class="form-group">
+  <div class="form-group">
     <label >Detalhes Tecnicos</label>
-    <%= c.text_field :technical_details %>
-<!--    <input type="text" class="form-control" id="value.to_i" name="value" maxlength = 11>-->
+    <%= c.text_area :technical_details, class:"form-control", rows: 3%>
   </div>
-  <button type="submit" class="btn btn-default">Salvar</button>
+  <div class="form-group">
+    <label >Destaque</label>
+    <%= c.check_box :featured%>
+  </div>
+  <button type="submit" class="btn btn-primary">Salvar</button>
 <% end %>
