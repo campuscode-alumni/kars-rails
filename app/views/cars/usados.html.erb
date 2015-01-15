@@ -5,25 +5,7 @@
   <li class="active"></option>
 </ol>
 <section>
- <% Car.usados.each do |c| %>
- 	<% c %>
- <div class="row">
-	    <div class="col-md-4 col-sm-10">
-	        <%= link_to image_tag("carro01.jpg", class: "img-responsive img-rounded"), c %>
-	    </div>
-	    <div class="col-md-7 col-sm-10">
-	      <div class="row">
-	        <ul class="well">
-	        	<li class=	"list-group-item"><%= link_to "#{c.model} - #{c.brand}", c %></li>
-	        	<li class="list-group-item">Preço: <%= number_to_currency(c.value, unit: "R$", separator: ",", delimiter: ".", format: "%u %n") %></li>
-	        	<li class="list-group-item">Ano: <%= c.year %></li>
-	        	<li class="list-group-item">KM: <%= number_with_delimiter(c.km, delimiter: ".", separator: "") %></li>
-	        	<li class="list-group-item">Motor: <%= c.motor %></li>
-	        </ul>
-	      </div>	        
-	   	</div>
- 	</div>
- 	<hr>
-	   	<% end  %>
-	
+  <% Car.usados.each do |car| %>
+    <%= render partial: "car", locals: { c: car } %>
+  <%end%>
 </section>
