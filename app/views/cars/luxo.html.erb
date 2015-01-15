@@ -1,10 +1,11 @@
+
 <ol class="breadcrumb">
   <li><%= link_to "Home", root_path %></option>
-  <li>Carros Novos</option>
+  <li>Carros de Luxo</option>
   <li class="active"></option>
 </ol>
 <section>
-  <% Car.novos.each do |car| %>
+  <% Car.luxos.each do |car| %>
     <%= render partial: "car", locals: { c: car } %>
   <%end%>
 </section>
