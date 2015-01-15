@@ -2,8 +2,13 @@
       <div class="col-md-12">
         <div id="carousel" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
-            <li data-target="#carousel" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel" data-slide-to="1"></li>
+            <% @cars.destaques.each_index do |index|%>
+              <%if index == 0 %>
+                <li data-target="#carousel" data-slide-to="0" class="active"></li>
+              <%else%>
+                <li data-target="#carousel" data-slide-to=<%@cars.destaques[index]%>></li>
+              <%end%>
+            <%end%>
           </ol>
           <div class="carousel-inner" role="listbox">
             <% @cars.destaques.each_index do |index|%>
