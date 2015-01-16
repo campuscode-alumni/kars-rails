@@ -5,7 +5,5 @@
   <li class="active"></option>
 </ol>
 <section>
-  <% Car.luxos.each do |car| %>
-    <%= render partial: "car", locals: { c: car } %>
-  <%end%>
+    <%= render partial: "car", collection: @cars %>
 </section>

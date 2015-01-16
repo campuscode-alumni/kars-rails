@@ -23,6 +23,10 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
   end
 
+  def luxo
+    @cars = Car.luxos
+  end
+
   def index
     @cars = Car.all
   end

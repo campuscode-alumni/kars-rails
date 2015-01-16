@@ -6,6 +6,6 @@
 </ol>
 <section>
   <% Car.usados.each do |car| %>
-    <%= render partial: "car", locals: { c: car } %>
+    <%= render partial: "car", locals: { car: car } %>
   <%end%>
 </section>
