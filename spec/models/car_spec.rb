@@ -10,4 +10,7 @@ describe Car, :type => :model do
   describe "#luxos" do
     it "returns only luxury cars"
   end
+  describe "validates" do
+    it "blank fields"
+  end
 end

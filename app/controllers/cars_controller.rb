@@ -1,5 +1,5 @@
 class CarsController < ApplicationController
-  
+
   def show
     @car = Car.find_by_id(params[:id])
     redirect_to root_path unless @car
@@ -11,12 +11,12 @@ class CarsController < ApplicationController
 
 
   def create
-  	@car = Car.new(car_params)
-  	if @car.save 
-  		redirect_to @car
-  	else 
-  		render "new"
-  	end
+    @car = Car.new(car_params)
+    if @car.save 
+      redirect_to @car
+    else 
+      render "new"
+    end
   end
 
   def edit
