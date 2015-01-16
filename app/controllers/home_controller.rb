@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-  	@cars = Car.limit(6)
+  	@cars = Car.all
   end
 end

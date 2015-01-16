@@ -2,22 +2,30 @@
       <div class="col-md-12">
         <div id="carousel" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
-            <li data-target="#carousel" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel" data-slide-to="1"></li>
+            <% @cars.destaques.each_index do |index|%>
+              <%if index == 0 %>
+                <li data-target="#carousel" data-slide-to="0" class="active"></li>
+              <%else%>
+                <li data-target="#carousel" data-slide-to=<%@cars.destaques[index]%>></li>
+              <%end%>
+            <%end%>
           </ol>
           <div class="carousel-inner" role="listbox">
-            <div class="item active">
-            	<%= image_tag "carro01.jpg"%>
-              <div class="carousel-caption">
-                Honda Accord 0Km R$100.000,00
+            <% @cars.destaques.each_index do |index|%>
+              <%if index == 0%>
+                <div class="item active">
+              <% else %>
+                <div class="item">
+              <% end %>
+              	<%= image_tag "carro01.jpg"%>
+                <div class= "carousel-caption">
+                  <%= @cars.destaques[index].model%>
+                  <%= @cars.destaques[index].brand%>
+                  <%= "#{@cars.destaques[index].km} Km"%>
+                  <%= "R$: #{@cars.destaques[index].value}"%>
+                </div>
               </div>
-            </div>
-            <div class="item">
-            	<%= image_tag "carro02.jpg"%>
-              <div class="carousel-caption">
-                Chevrolet Chevette 1990 R$3.000,00
-              </div>
-            </div>
+            <% end %>
           </div>
           <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -32,7 +40,7 @@
     </section>
     <br>
     <section id="anuncios" >
-    <% @cars.each_index do |index|%>
+    <% @cars.limit(6).each_index do |index|%>
       <% if index == 0 || (index % 3) == 0 %>
         <div class="row">
       <% end %>
