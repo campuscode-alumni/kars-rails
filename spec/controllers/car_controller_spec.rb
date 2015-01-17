@@ -10,7 +10,6 @@ describe CarsController, :type => :controller do
     end
 
     it "create a new car" do
-      car = Car.new(params)
       expect(Car).to receive(:new).with(params).and_return(car)
       post :create, :car => params
     end
@@ -24,6 +23,12 @@ describe CarsController, :type => :controller do
       post :create, :car => params
       expect(response).to redirect_to :action => :show,
                                       :id     => car.id
+    end
+
+    it "when fails on save render new" do
+      allow(car).to receive(:save).and_return(false)
+      post :create, :car => params
+      expect(response).to render_template(:new)
     end
   end
 end
