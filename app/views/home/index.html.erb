@@ -3,7 +3,7 @@
         <div id="carousel" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
             <% @cars.destaques.each_index do |index|%>
-              <li data-target="#carousel" data-slide-to="<%= index %>" <%= "class=\"active\"" if index == 0%>></li>
+              <li data-target="#carousel" data-slide-to="<%= index %>" class="<%="active" if index == 0 %>"></li>
             <%end%>
           </ol>
           <div class="carousel-inner" role="listbox">
