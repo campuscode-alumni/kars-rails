@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150114230726) do
+ActiveRecord::Schema.define(version: 20150119233328) do
 
   create_table "cars", force: true do |t|
     t.string   "model"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20150114230726) do
     t.datetime "updated_at"
     t.text     "technical_details"
     t.boolean  "featured",          default: false
+    t.string   "fuel"
   end
 
 end
