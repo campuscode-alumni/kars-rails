@@ -9,7 +9,7 @@ describe Car, :type => :model do
     Car.create({:brand => "VW", "value" => "20000", "model" => "Gol", "year" => "2014", "km" => "55430", "motor" => "2.0"})
     Car.create({:brand => "VW", "value" => "200000", "model" => "Gol", "year" => "2014", "km" => "0", "motor" => "2.0"})
   end
-
+  
   describe "#second_hand?" do
     it "should be true only when km is greater than 0" do
       car = Car.create(brand: "VW", value: 20000, model: "Gol", year: 2014, km: 10, motor: "1,8")
@@ -31,6 +31,16 @@ describe Car, :type => :model do
       expect(Car.novos.length).to eq(2)
     end
   end
+
+  describe "#novos" do
+     it "Car news km == 0" do
+      Car.novos.each do |car|
+        expect(car).to be_new_one
+      end 
+    end
+  end
+
+  
 
   describe "#luxos" do
     it "returns only luxury cars" do
