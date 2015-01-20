@@ -2,12 +2,12 @@ require 'rails_helper'
 
 describe Car, :type => :model do
   before do
-    Car.create({:brand => "VW", "value" => "20000", "model" => "Gol", "year" => "2014", "km" => "0", "motor" => "2.0"})
-    Car.create({:brand => "VW", "value" => "20000", "model" => "Gol", "year" => "2014", "km" => "55430", "motor" => "2.0"})
-    Car.create({:brand => "VW", "value" => "200000", "model" => "Gol", "year" => "2014", "km" => "10", "motor" => "2.0"})
-    Car.create({:brand => "VW", "value" => "20000", "model" => "Gol", "year" => "2014", "km" => "0", "motor" => "2.0"})
-    Car.create({:brand => "VW", "value" => "20000", "model" => "Gol", "year" => "2014", "km" => "55430", "motor" => "2.0"})
-    Car.create({:brand => "VW", "value" => "200000", "model" => "Gol", "year" => "2014", "km" => "0", "motor" => "2.0"})
+    Car.create({:brand => "VW", "value" => "20000", "model" => "Gol", "year" => "2014", "km" => "0", "motor" => "2.0", "fuel" => "gasolina"})
+    Car.create({:brand => "VW", "value" => "20000", "model" => "Gol", "year" => "2014", "km" => "55430", "motor" => "2.0", "fuel" => "gasolina"})
+    Car.create({:brand => "VW", "value" => "200000", "model" => "Gol", "year" => "2014", "km" => "10", "motor" => "2.0", "fuel" => "gasolina"})
+    Car.create({:brand => "VW", "value" => "20000", "model" => "Gol", "year" => "2014", "km" => "0", "motor" => "2.0", "fuel" => "gasolina"})
+    Car.create({:brand => "VW", "value" => "20000", "model" => "Gol", "year" => "2014", "km" => "55430", "motor" => "2.0", "fuel" => "gasolina"})
+    Car.create({:brand => "VW", "value" => "200000", "model" => "Gol", "year" => "2014", "km" => "0", "motor" => "2.0", "fuel" => "gasolina"})
   end
   
   describe "#second_hand?" do
@@ -46,7 +46,7 @@ describe Car, :type => :model do
 
   describe "#luxos" do
     it "returns only luxury cars" do
-      Car.create({:brand => "VW", "value" => "ccfxxx", "model" => "Gol", "year" => "2014", "km" => "0", "motor" => "2.0"})
+      Car.create({:brand => "VW", "value" => "ccfxxx", "model" => "Gol", "year" => "2014", "km" => "0", "motor" => "2.0", "fuel" => "gasolina"})
       expect(Car.luxos.length).to eq(1)
     end
   end
@@ -55,7 +55,7 @@ describe Car, :type => :model do
       describe "blank fields" do
         it "all fields are mandatory" do
           car = Car.create
-          expect(car.errors.messages.length).to eq(5)
+          expect(car.errors.messages.length).to eq(6)
           end
 
         it "model is blank" do

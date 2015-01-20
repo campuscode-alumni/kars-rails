@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe CarsController, :type => :controller do
   describe "POST create" do
-    let(:params) { {"brand" => "VW", "value" => "20000", "model" => "Gol", "year" => "2014", "km" => "0", "motor" => "2.0"} }
+    let(:params) { {"brand" => "VW", "value" => "20000", "model" => "Gol", "year" => "2014", "km" => "0", "motor" => "2.0", "fuel" => "gasolina"} }
     let(:car)    { Car.new(params) }
 
     before do

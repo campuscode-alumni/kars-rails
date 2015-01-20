@@ -16,7 +16,8 @@
         <ul class="list-unstyled">
           <li>Ano: <%= @car.year %></option> 
           <li>KM: <%= number_with_delimiter(@car.km, delimiter: ".", separator: "") %></option> 
-          <li>Motor: <%= @car.motor %></option> 
+          <li>Motor: <%= @car.motor %></option>
+          <li>Motor: <%= @car.fuel %></option> 
         </ul>
         <button class="btn btn-danger hidden-print">Comprar</button>
         <button class="btn btn-success hidden-print" onclick="financiamento()">Detalhes Financiamento</button>
