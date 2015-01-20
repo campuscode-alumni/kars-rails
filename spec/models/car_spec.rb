@@ -10,6 +10,7 @@ describe Car, :type => :model do
     Car.create({:brand => "VW", "value" => "200000", "model" => "Gol", "year" => "2014", "km" => "0", "motor" => "2.0"})
   end
 
+
   describe "#second_hand?" do
     it "should be true only when km is greater than 0" do
       car = Car.create(brand: "VW", value: 20000, model: "Gol", year: 2014, km: 10, motor: "1,8")
@@ -22,7 +23,9 @@ describe Car, :type => :model do
 
   describe "#usados" do
     it "returns only second hand cars" do
-      expect(Car.usados.length).to eq(3)
+      Car.usados.each do |car|
+        expect(car.km).to be >0
+      end
     end
   end
 
@@ -35,46 +38,40 @@ describe Car, :type => :model do
   describe "#luxos" do
     it "returns only luxury cars" do
       Car.create({:brand => "VW", "value" => "ccfxxx", "model" => "Gol", "year" => "2014", "km" => "0", "motor" => "2.0"})
-      expect(Car.luxos.length).to eq(0)
+      expect(Car.luxos.length).to eq(1)
     end
   end
 
-  describe "validates" do
-    describe "blank fields" do
-      it "all fields are mandatory" do
-        car = Car.create
-        expect(car.errors.messages.length).to eq(5)
-      end
+    describe "validates" do
+      describe "blank fields" do
+        it "all fields are mandatory" do
+          car = Car.create
+          expect(car.errors.messages.length).to eq(5)
+          end
 
-      it "model is blank" do
+        it "model is blank" do
 
-      end
-      it "brand is blank"
-      it "value is blank"
-      it "km is blank" do 
-        car = Car.create({:brand => "VW", "value" => "20000", "model" => "Gol", "year" => "2014", "motor" => "2.0"})
-        expect(car.errors.messages[:km][0]).to eq(": Favor preencher o campo.")
-      end
+          end
+        it "brand is blank" do
+          end
+        it "value is blank" do
+          end
+        it "km is blank" do 
+          car = Car.create({:brand => "VW", "value" => "20000", "model" => "Gol", "year" => "2014", "motor" => "2.0"})
+          expect(car.errors.messages[:km][0]).to eq(": Favor preencher o campo.")
+          end
 
-      it "year is blank"do 
-        car = Car.create({:brand => "VW", "value" => "20000", "model" => "Gol", "year" => "2014", "motor" => "2.0"})
-        expect(car.errors.messages[:km][0]).to eq(": Favor preencher o campo.")
-      end
+        it "year is blank" do 
+          end
 
-      it "model is blank"do 
-        car = Car.create({:brand => "VW", "value" => "20000", "model" => "Gol", "year" => "2014", "motor" => "2.0"})
-        expect(car.errors.messages[:km][0]).to eq(": Favor preencher o campo.")
-      end
+        it "model is blank" do 
+          end
 
-      it "brand is blank"do 
-        car = Car.create({ "value" => "20000", "model" => "Gol", "year" => "2014", "motor" => "2.0"})
-        expect(car.errors.messages[:brand][0]).to eq(": Favor preencher o campo.")
-      end
+        it "brand is blank" do 
+          end
 
-      it "value should not is blank"do 
-        car = Car.create({:brand => "VW", "model" => "Gol", "year" => "2014", "km" => "212", "motor" => "2.0"})
-        expect(car.errors.size).to eq(1)
-      end
+        it "value should not is blank" do 
+          end
     end
   end
 end
