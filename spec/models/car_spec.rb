@@ -9,12 +9,7 @@ describe Car, :type => :model do
     Car.create({:brand => "VW", "value" => "20000", "model" => "Gol", "year" => "2014", "km" => "55430", "motor" => "2.0"})
     Car.create({:brand => "VW", "value" => "200000", "model" => "Gol", "year" => "2014", "km" => "0", "motor" => "2.0"})
   end
-<<<<<<< HEAD
   
-=======
-
-
->>>>>>> a7f2f0a9b2ef57bbaa4af32665a8ef1aeb645533
   describe "#second_hand?" do
     it "should be true only when km is greater than 0" do
       car = Car.create(brand: "VW", value: 20000, model: "Gol", year: 2014, km: 10, motor: "1,8")
