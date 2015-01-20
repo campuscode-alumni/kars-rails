@@ -4,7 +4,7 @@ class Car < ActiveRecord::Base
 	scope :luxos,     -> { where ("km == 0 and value >= 100000") }
 	scope :destaques, -> { where ({featured: true}) }	
 	
-	validates_presence_of :brand, :model, :year, :km, :value
+	validates_presence_of :brand, :model, :year, :km, :value, :fuel
   validates_numericality_of :year, :km, only_integer: true
   validates_numericality_of :km, greater_than_or_equal_to: 0
   validates_length_of :year, is: 4

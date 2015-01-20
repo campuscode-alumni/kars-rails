@@ -37,6 +37,11 @@
     <label >Motor</label>
     <%= c.text_field :motor, class:"form-control"%>
   </div>
+  
+  <div class="form-group">
+    <label >Combustível</label>
+    <%= c.select :fuel, ["Gasolina", "Alcool", "Diesel", "Flex"], class:"form-control"%>
+  </div>
 
   <div class="form-group">
     <label >Valor R$*</label>
