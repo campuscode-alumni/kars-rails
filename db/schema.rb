@@ -19,11 +19,11 @@ ActiveRecord::Schema.define(version: 20150119233328) do
     t.integer  "year"
     t.integer  "km"
     t.string   "motor"
-    t.float    "value"
+    t.float    "value",             limit: 24
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "technical_details"
-    t.boolean  "featured",          default: false
+    t.boolean  "featured",                     default: false
     t.string   "fuel"
   end
 
