@@ -6,26 +6,27 @@
 
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Car.create({model: "Gol", brand: "VW", year: 2014, km: 15000, motor: "1.8", value: 23.000})
+Car.create({model: "Gol", brand: "VW", year: 2014, km: 15000, motor: "1.8", value: 23.000, fuel: "flex"})
 
 
 
 6.times do 
 	c = Car.new
 	c.model = "Gol"
-	c.brand = "Volks"
-	c.year = 96
+	c.brand = "Volkswagen"
+	c.year = 1996
 	c.km = 42
 	c.motor = "banana"
 	c.value = 10000.00
+  c.fuel = "gasolina"
 	c.save
 end
 
 # Carros novos
-Car.create({model: "Gol", brand: "VW", year: 2014, km: 0, motor: "1.6", value: 31000})
-Car.create({model: "Sandero", brand: "Renault", year: 2014, km: 0, motor: "1.6", value: 34000})
+Car.create({model: "Gol", brand: "VW", year: 2014, km: 0, motor: "1.6", value: 31000, fuel: "flex"})
+Car.create({model: "Sandero", brand: "Renault", year: 2014, km: 0, motor: "1.6", value: 34000, fuel: "flex"})
 
 # Carros luxo
-Car.create({model: "A4", brand: "Audi", year: 2014, km: 0, motor: "2.0 Turbo", value: 130000})
-Car.create({model: "Evoque", brand: "Land Hover", year: 2014, km: 0, motor: "3.6", value: 260000})
+Car.create({model: "A4", brand: "Audi", year: 2014, km: 0, motor: "2.0 Turbo", value: 130000, fuel: "flex"})
+Car.create({model: "Evoque", brand: "Land Hover", year: 2014, km: 0, motor: "3.6", value: 260000, fuel: "flex"})
 
